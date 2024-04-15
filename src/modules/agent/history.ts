@@ -66,7 +66,7 @@ export async function getHistory(
  * @param {string[]} ids
  * @param {string | null} cypher
  * @returns {string}  The ID of the Message node
- */git 
+ */
 export async function saveHistory(
   sessionId: string,
   source: string,
