@@ -13,7 +13,7 @@ describe("Speculative Answer Generation Chain", () => {
 
   beforeAll(async () => {
     config({ path: ".env.local" });
-
+    
     llm = new ChatOpenAI({
       openAIApiKey: process.env.OPENAI_API_KEY,
       modelName: "gpt-3.5-turbo",

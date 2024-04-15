@@ -45,7 +45,6 @@ export default function initRephraseChain(llm: BaseChatModel) {
   // tag::sequence[]
   return RunnableSequence.from<RephraseQuestionInput, string>([
     // <1> Convert message history to a string
-    // tag::assign[]
     RunnablePassthrough.assign({
       history: ({ history }): string => {
         if (history.length == 0) {
@@ -59,7 +58,6 @@ export default function initRephraseChain(llm: BaseChatModel) {
           .join("\n");
       },
     }),
-    // end::assign[]
     // <2> Use the input and formatted history to format the prompt
     rephraseQuestionChainPrompt,
     // <3> Pass the formatted prompt to the LLM
